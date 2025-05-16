@@ -27,6 +27,31 @@ const CodeEditor: React.FC<CodeEditorProps> = ({
     onChange(newValue);
   };
 
+  // Handle Tab key press to insert spaces instead of changing focus
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Tab') {
+      e.preventDefault(); // Prevent focus change
+      
+      const target = e.target as HTMLTextAreaElement;
+      const start = target.selectionStart;
+      const end = target.selectionEnd;
+      
+      // Insert 2 spaces at cursor position
+      const spaces = '  ';
+      const newValue = internalValue.substring(0, start) + spaces + internalValue.substring(end);
+      
+      // Update the value
+      setInternalValue(newValue);
+      onChange(newValue);
+      
+      // Move cursor position after the inserted spaces
+      // We need to use setTimeout to ensure this happens after React's state update
+      setTimeout(() => {
+        target.selectionStart = target.selectionEnd = start + spaces.length;
+      }, 0);
+    }
+  };
+
   const getLanguageClass = () => {
     switch (language) {
       case 'html':
@@ -63,6 +88,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({
       <textarea
         value={internalValue}
         onChange={handleChange}
+        onKeyDown={handleKeyDown}
         className={cn(
           "code-editor w-full px-4 py-3 outline-none",
           getLanguageClass(),
