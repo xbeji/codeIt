@@ -74,7 +74,8 @@ const CodeEditor: React.FC<CodeEditorProps> = ({
       case 'js':
         return 'JavaScript';
       default:
-        return language.toUpperCase();
+        // Fix: Use a string literal instead of calling toUpperCase on language
+        return 'CODE'; // Fallback label
     }
   };
 
