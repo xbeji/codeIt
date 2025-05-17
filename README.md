@@ -7,7 +7,7 @@ Built with modern tools: **Vite + React + TypeScript + Tailwind CSS + shadcn/ui*
 
 ## 🚀 Demo
 
-> Coming soon – deploy using Vercel or GitHub Pages!
+https://code.academixtools.org
 
 ---
 
