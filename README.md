@@ -1,86 +1,150 @@
-# CodeIt: Interactive HTML, CSS, and JavaScript Quiz App
+# 🧠 CodeIt Quiz App
 
-🎓 **CodeIt** is a responsive, beginner-friendly web app that allows students to practice HTML, CSS, and JavaScript code snippets in real time. It features live preview, guided hints, feedback, and validation based on common course examples.
-
----
-
-## 🌟 Features
-
-- 📄 14 curated questions covering:
-  - HTML structure
-  - CSS styling and effects
-  - JavaScript logic, loops, conditionals, alerts, and prompts
-- 🧠 Instant code validation with detailed feedback
-- 💡 Toggleable hints and answer reveal
-- 🖼 Live preview using `<iframe>`
-- 🔁 Next button to freely navigate between questions
-- 📱 Mobile-friendly and modern design
+An interactive web app for learning **HTML**, **CSS**, and **JavaScript** by solving live coding exercises.  
+Built with modern tools: **Vite + React + TypeScript + Tailwind CSS + shadcn/ui**.
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Demo
+
+> Coming soon – deploy using Vercel or GitHub Pages!
+
+---
+
+## 📚 Features
+
+- 🧠 14+ auto-validated questions for HTML/CSS/JS
+- 📦 Separate code editors for HTML, CSS, and JavaScript
+- 🧪 Custom validators per question (checks structure, color, logic, alerts, etc.)
+- 💡 Toggleable hints and full solution reveal
+- ✅ Works with `alert()` and `prompt()` using iframe proxying
+- 🖼 Real-time preview
+- 🎨 Responsive modern UI using Tailwind + shadcn/ui
+
+---
+
+## ⚙️ Tech Stack
+
+| Tool           | Description                                  |
+|----------------|----------------------------------------------|
+| [Vite](https://vitejs.dev/)         | Blazing fast dev server & bundler |
+| [React](https://react.dev/)         | Frontend UI framework             |
+| [TypeScript](https://www.typescriptlang.org/) | Type-safe JavaScript       |
+| [Tailwind CSS](https://tailwindcss.com/)     | Utility-first styling        |
+| [shadcn/ui](https://ui.shadcn.com/)         | Styled component library      |
+| [Bun](https://bun.sh/) (optional)  | Fast JavaScript runtime & bundler |
+
+---
+
+## 🧑‍💻 Getting Started
 
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/xbeji/code.academixtools.org.git
-cd code.academixtools.org
+git clone https://github.com/xbeji/codeit-quiz-app.git
+cd codeit-quiz-app
 ```
 
-### 2. Open `index.html` in your browser
+### 2. Install dependencies
 
-No build or server required. It runs entirely in the browser.
-
----
-
-## 📂 Project Structure
-
-```
-code.academixtools.org/
-│
-├── index.html         # Main layout
-├── main.css           # Styling (modern & responsive)
-├── main.js            # All questions, logic, and validation
-└── README.md          # You are here!
+Using Bun:
+```bash
+bun install
 ```
 
----
+Using NPM:
+```bash
+npm install
+```
 
-## ✍️ How It Works
+### 3. Start development server
 
-- Each question includes a description, hint, and a correct solution.
-- Students write HTML, CSS, and JS in separate fields.
-- On "Submit", their answer is tested and feedback is shown.
-- Alerts and prompts work as expected using `parent.alert/prompt` inside the iframe.
+```bash
+bun run dev
+# or
+npm run dev
+```
 
----
-
-## ✅ Sample Questions
-
-- Create a paragraph with class `greet` and style it blue
-- Use text-shadow on a `<p>` element
-- JavaScript: prompt for a name and greet the user
-- For-loops, while-loops, if/else, switch statements
-
-See full list in [`main.js`](main.js)
+Then open `http://localhost:5173` in your browser.
 
 ---
 
-## 📬 Feedback & Contributions
+## 🗂 Project Structure
 
-Have ideas or improvements? Open an issue or submit a PR.
+```
+src/
+├── components/       # UI components (code editor, buttons, layout)
+├── data/             # (Optional) Question JSON or static assets
+├── hooks/            # Custom hooks
+├── lib/              # Utility libraries (e.g. validation)
+├── pages/            # App screens/pages
+├── utils/            # Reusable helpers
+├── App.tsx           # App entry component
+├── main.tsx          # Vite entry point
+├── App.css           # Global styles
+├── index.css         # Tailwind base
+```
 
-🗣 You can also reach me on Twitter: [@rlbeji](https://twitter.com/YourHandle)
+---
+
+## 📋 Sample Question Format
+
+```ts
+{
+  question: "Add a button that alerts 'Hello World'",
+  hint: "Use <button> with onclick and define function sayHi()",
+  solution: {
+    html: '<button onclick="sayHi()">Click Me</button>',
+    js: 'function sayHi() { alert("Hello World"); }'
+  },
+  validate: (doc) => {
+    const btn = doc.querySelector("button");
+    return btn && btn.textContent.includes("Click") ? true : "Button missing or incorrect";
+  }
+}
+```
+
+---
+
+## 🧪 Validation
+
+Custom validators are written in JS/TS and test:
+
+- DOM structure (HTML)
+- CSS styles (e.g. colors, shadows)
+- JS behavior (`alert`, `prompt`, loops, etc.)
+- Expected output inside iframe
+
+---
+
+## 📦 Build for Production
+
+```bash
+bun run build
+# or
+npm run build
+```
+
+Then deploy `/dist` to Vercel, GitHub Pages, Netlify, etc.
+
+---
+
+## 📬 Feedback / Contributions
+
+Have suggestions or want to add more questions?
+
+- Open an issue or PR
+- Tweet me [@xbeji](https://twitter.com/xbeji) 🇸🇦
 
 ---
 
 ## 🛡 License
 
-MIT License
+MIT — free to use, modify, and share ✌️
 
 ---
 
-## 🇸🇦 Special Note (Arabic)
+## 🇸🇦 Note for Saudi Students
 
-سويت هذا المشروع عشان أساعد الطلاب يتدربون على HTML, CSS, و JavaScript  
-جربوه، واكتبوا لي رأيكم أو إذا عندكم إضافات!
+سويت هذا الموقع كتمارين تفاعلية للـ HTML و CSS و JavaScript  
+جربوه وعلّقوا إذا عندكم ملاحظات أو إضافات! الله يوفقكم 💪
