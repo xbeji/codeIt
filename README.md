@@ -1,73 +1,92 @@
-# Welcome to your Lovable project
+# CodeIt: Interactive HTML, CSS, and JavaScript Quiz App
 
-## Project info
+🎓 **CodeIt** is a responsive, beginner-friendly web app that allows students to practice HTML, CSS, and JavaScript code snippets in real time. It features live preview, guided hints, feedback, and validation based on common course examples.
 
-**URL**: https://lovable.dev/projects/4c07000d-2662-44d1-afb9-dbb683273dff
+---
 
-## How can I edit this code?
+## 🌟 Features
 
-There are several ways of editing your application.
+- 📄 14 curated questions covering:
+  - HTML structure
+  - CSS styling and effects
+  - JavaScript logic, loops, conditionals, alerts, and prompts
+- 🧠 Instant code validation with detailed feedback
+- 💡 Toggleable hints and answer reveal
+- 🖼 Live preview using `<iframe>`
+- 🔁 Next button to freely navigate between questions
+- 📱 Mobile-friendly and modern design
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4c07000d-2662-44d1-afb9-dbb683273dff) and start prompting.
+## 📸 Preview
 
-Changes made via Lovable will be committed automatically to this repo.
+![Preview](preview.png) <!-- Add screenshot here -->
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🚀 Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 1. Clone the repo
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+git clone https://github.com/your-username/codeit-quiz-app.git
+cd codeit-quiz-app
 ```
 
-**Edit a file directly in GitHub**
+### 2. Open `index.html` in your browser
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+No build or server required. It runs entirely in the browser.
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📂 Project Structure
 
-## What technologies are used for this project?
+```
+codeit-quiz-app/
+│
+├── index.html         # Main layout
+├── main.css           # Styling (modern & responsive)
+├── main.js            # All questions, logic, and validation
+└── README.md          # You are here!
+```
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## ✍️ How It Works
 
-## How can I deploy this project?
+- Each question includes a description, hint, and a correct solution.
+- Students write HTML, CSS, and JS in separate fields.
+- On "Submit", their answer is tested and feedback is shown.
+- Alerts and prompts work as expected using `parent.alert/prompt` inside the iframe.
 
-Simply open [Lovable](https://lovable.dev/projects/4c07000d-2662-44d1-afb9-dbb683273dff) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## ✅ Sample Questions
 
-Yes, you can!
+- Create a paragraph with class `greet` and style it blue
+- Use text-shadow on a `<p>` element
+- JavaScript: prompt for a name and greet the user
+- For-loops, while-loops, if/else, switch statements
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+See full list in [`main.js`](main.js)
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
+
+## 📬 Feedback & Contributions
+
+Have ideas or improvements? Open an issue or submit a PR.
+
+🗣 You can also reach me on Twitter: [@YourHandle](https://twitter.com/YourHandle)
+
+---
+
+## 🛡 License
+
+MIT License
+
+---
+
+## 🇸🇦 Special Note (Arabic)
+
+سويت هذا المشروع عشان أساعد الطلاب يتدربون على HTML, CSS, و JavaScript  
+جربوه، واكتبوا لي رأيكم أو إذا عندكم إضافات!
