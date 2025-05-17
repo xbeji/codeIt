@@ -18,19 +18,13 @@
 
 ---
 
-## 📸 Preview
-
-![Preview](preview.png) <!-- Add screenshot here -->
-
----
-
 ## 🚀 Getting Started
 
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/your-username/codeit-quiz-app.git
-cd codeit-quiz-app
+git clone https://github.com/xbeji/code.academixtools.org.git
+cd code.academixtools.org
 ```
 
 ### 2. Open `index.html` in your browser
@@ -42,7 +36,7 @@ No build or server required. It runs entirely in the browser.
 ## 📂 Project Structure
 
 ```
-codeit-quiz-app/
+code.academixtools.org/
 │
 ├── index.html         # Main layout
 ├── main.css           # Styling (modern & responsive)
@@ -76,7 +70,7 @@ See full list in [`main.js`](main.js)
 
 Have ideas or improvements? Open an issue or submit a PR.
 
-🗣 You can also reach me on Twitter: [@YourHandle](https://twitter.com/YourHandle)
+🗣 You can also reach me on Twitter: [@rlbeji](https://twitter.com/YourHandle)
 
 ---
 
